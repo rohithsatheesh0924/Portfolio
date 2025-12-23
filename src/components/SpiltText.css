@@ -1,0 +1,33 @@
+.splittext-wrapper {
+  display: inline-block;
+}
+
+.splittext-word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(12px);
+  filter: blur(4px);
+  transition:
+    opacity 0.6s ease-out,
+    transform 0.6s ease-out,
+    filter 0.6s ease-out;
+}
+
+/* when visible, animate each word with stagger */
+.splittext-visible .splittext-word {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+/* stagger delays (extend if you have more words) */
+.splittext-visible .splittext-word:nth-child(1)  { transition-delay: 0.08s; }
+.splittext-visible .splittext-word:nth-child(2)  { transition-delay: 0.14s; }
+.splittext-visible .splittext-word:nth-child(3)  { transition-delay: 0.20s; }
+.splittext-visible .splittext-word:nth-child(4)  { transition-delay: 0.26s; }
+.splittext-visible .splittext-word:nth-child(5)  { transition-delay: 0.32s; }
+.splittext-visible .splittext-word:nth-child(6)  { transition-delay: 0.38s; }
+.splittext-visible .splittext-word:nth-child(7)  { transition-delay: 0.44s; }
+.splittext-visible .splittext-word:nth-child(8)  { transition-delay: 0.50s; }
+.splittext-visible .splittext-word:nth-child(9)  { transition-delay: 0.56s; }
+.splittext-visible .splittext-word:nth-child(10) { transition-delay: 0.62s; }
