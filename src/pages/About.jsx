@@ -2,6 +2,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import Navbar from "../components/Navbar";
 import { useDarkMode } from "../context/DarkModeContext";
+import ScrollVelocity from "../components/ScrollVelocity";
 
 const About = () => {
   const { isDark } = useDarkMode();
@@ -247,6 +248,25 @@ const About = () => {
         </div>
       </section>
 
+
+      {/* FRONTEND DEVELOPER VELOCITY MARQUEE SECTION */}
+<section className={`py-20 sm:py-28 overflow-hidden border-t border-b select-none ${isDark ? 'bg-zinc-950 border-white/5' : 'bg-zinc-50 border-black/5'}`}>
+  <div className="w-full flex flex-col gap-4">
+    
+    <ScrollVelocity
+      texts={['Frontend Developer ✦', 'Frontend Developer ✦']} 
+      velocity={80}
+      className={`text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-[1000] uppercase font-sans tracking-tighter scale-y-110 ${
+        isDark ? 'text-blue-500' : 'text-blue-600'
+      }`}
+      numCopies={6}
+      damping={50}
+      stiffness={400}
+    />
+
+  </div>
+</section>
+
      {/* SKILLS SECTION - Premium Interactive Scroll Stack Engine */}
 <section 
   ref={skillsRef}
@@ -255,13 +275,22 @@ const About = () => {
   <div className="max-w-4xl mx-auto">
     
     {/* Section Header */}
-    <div className={`mb-16 sm:mb-20 transition-all duration-1000 ease-out ${visibleSections.skills ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
-      <h3 className={`text-sm sm:text-base font-[1000] tracking-[0.25em] uppercase font-sans scale-y-105 select-none ${
-        isDark ? 'text-blue-400' : 'text-blue-600'
-      }`}>
-        // Technical Skill Stack
-      </h3>
-    </div>
+
+<div
+  className={`mb-16 sm:mb-20 transition-all duration-1000 ease-out ${
+    visibleSections.skills
+      ? "opacity-100 translate-y-0"
+      : "opacity-0 translate-y-10"
+  }`}
+>
+  <h3
+    className={`text-sm sm:text-base font-black tracking-[0.25em] uppercase font-sans scale-y-105 select-none ${
+      isDark ? "text-blue-400" : "text-blue-600"
+    }`}
+  >
+    Technical Skill Stack
+  </h3>
+</div>
     
     {/* Active Scroll Stack Layer Track */}
     <div className="relative flex flex-col gap-6">
@@ -399,6 +428,93 @@ const About = () => {
   </div>
 </section>
 
+
+{/* SKILLS INFINITE SCROLL TICKER SECTION */}
+<section className={`py-16 sm:py-24 overflow-hidden border-t border-b select-none ${isDark ? 'bg-black border-blue-500/20' : 'bg-zinc-50 border-blue-600/20'}`}>
+  <div className="w-full flex flex-col gap-4 sm:gap-6">
+    {/* Row 1: Left to Right */}
+    <div className="w-full overflow-hidden flex whitespace-nowrap">
+      <div className="flex gap-6 sm:gap-8 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-[1000] uppercase font-sans tracking-tighter animate-marquee-left">
+        {[...Array(2)].map((_, setIndex) => (
+          <div key={setIndex} className="flex gap-6 sm:gap-8 flex-shrink-0 items-center">
+            <span className={`${isDark ? 'text-blue-400' : 'text-blue-600'}`}>HTML</span>
+            <span className={`${isDark ? 'text-blue-400/30' : 'text-blue-600/30'}`}>✦</span>
+            <span className={`${isDark ? 'text-blue-400' : 'text-blue-600'}`}>CSS</span>
+            <span className={`${isDark ? 'text-blue-400/30' : 'text-blue-600/30'}`}>✦</span>
+            <span className={`${isDark ? 'text-blue-400' : 'text-blue-600'}`}>JAVASCRIPT</span>
+            <span className={`${isDark ? 'text-blue-400/30' : 'text-blue-600/30'}`}>✦</span>
+            <span className={`${isDark ? 'text-blue-400' : 'text-blue-600'}`}>REACT.JS</span>
+            <span className={`${isDark ? 'text-blue-400/30' : 'text-blue-600/30'}`}>✦</span>
+            <span className={`${isDark ? 'text-blue-400' : 'text-blue-600'}`}>FIGMA</span>
+            <span className={`${isDark ? 'text-blue-400/30' : 'text-blue-600/30'}`}>✦</span>
+            <span className={`${isDark ? 'text-blue-400' : 'text-blue-600'}`}>GIT</span>
+            <span className={`${isDark ? 'text-blue-400/30' : 'text-blue-600/30'}`}>✦</span>
+            <span className={`${isDark ? 'text-blue-400' : 'text-blue-600'}`}>GITHUB</span>
+            <span className={`${isDark ? 'text-blue-400/30' : 'text-blue-600/30'}`}>✦</span>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    {/* Row 2: Right to Left */}
+    <div className="w-full overflow-hidden flex whitespace-nowrap">
+      <div className="flex gap-6 sm:gap-8 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-[1000] uppercase font-sans tracking-tighter animate-marquee-right">
+        {[...Array(2)].map((_, setIndex) => (
+          <div key={setIndex} className="flex gap-6 sm:gap-8 flex-shrink-0 items-center">
+            <span className={`${isDark ? 'text-blue-400' : 'text-blue-600'}`}>PHP</span>
+            <span className={`${isDark ? 'text-blue-400/30' : 'text-blue-600/30'}`}>✦</span>
+            <span className={`${isDark ? 'text-blue-400' : 'text-blue-600'}`}>MYSQL</span>
+            <span className={`${isDark ? 'text-blue-400/30' : 'text-blue-600/30'}`}>✦</span>
+            <span className={`${isDark ? 'text-blue-400' : 'text-blue-600'}`}>PYTHON</span>
+            <span className={`${isDark ? 'text-blue-400/30' : 'text-blue-600/30'}`}>✦</span>
+            <span className={`${isDark ? 'text-blue-400' : 'text-blue-600'}`}>C++</span>
+            <span className={`${isDark ? 'text-blue-400/30' : 'text-blue-600/30'}`}>✦</span>
+            <span className={`${isDark ? 'text-blue-400' : 'text-blue-600'}`}>PHOTOSHOP</span>
+            <span className={`${isDark ? 'text-blue-400/30' : 'text-blue-600/30'}`}>✦</span>
+            <span className={`${isDark ? 'text-blue-400' : 'text-blue-600'}`}>CANVA</span>
+            <span className={`${isDark ? 'text-blue-400/30' : 'text-blue-600/30'}`}>✦</span>
+            <span className={`${isDark ? 'text-blue-400' : 'text-blue-600'}`}>EXCEL</span>
+            <span className={`${isDark ? 'text-blue-400/30' : 'text-blue-600/30'}`}>✦</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <style dangerouslySetInnerHTML={{__html: `
+    @keyframes marquee-left {
+      0% {
+        transform: translateX(-50%);
+      }
+      100% {
+        transform: translateX(0%);
+      }
+    }
+    
+    @keyframes marquee-right {
+      0% {
+        transform: translateX(0%);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+    
+    .animate-marquee-left {
+      animation: marquee-left 30s linear infinite;
+    }
+    
+    .animate-marquee-right {
+      animation: marquee-right 30s linear infinite;
+    }
+    
+    .animate-marquee-left:hover,
+    .animate-marquee-right:hover {
+      animation-play-state: paused;
+    }
+  `}} />
+</section>
+
       {/* CONTACT SECTION */}
       <section 
         ref={contactRef}
@@ -511,25 +627,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* FOOTER SECTION */}
-      <section 
-        ref={footerRef}
-        className={`py-12 sm:py-16 lg:py-24 overflow-hidden border-t ${isDark ? 'bg-zinc-950 border-white/5' : 'bg-zinc-50 border-black/5'}`}
-      >
-        <div className="max-w-7xl mx-auto px-6 select-none">
-          <div 
-            className={`flex flex-wrap justify-center items-center gap-2 sm:gap-4 lg:gap-6 text-[8rem] sm:text-[10rem] md:text-[12rem] lg:text-[18rem] font-black leading-none tracking-tighter uppercase scale-y-105 transition-all duration-1000 ${
-              visibleSections.footer ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-            }`}
-          >
-            <span className={`${isDark ? 'text-blue-500' : 'text-blue-600'}`}>INS</span>
-            <span className={`${isDark ? 'text-blue-500/20' : 'text-blue-600/10'}`}>✦</span>
-            <span className={`${isDark ? 'text-blue-500' : 'text-blue-600'}`}>FB</span>
-            <span className={`${isDark ? 'text-blue-500/20' : 'text-blue-600/10'}`}>✦</span>
-            <span className={`${isDark ? 'text-blue-500' : 'text-blue-600'}`}>TW</span>
-          </div>
-        </div>
-      </section>
+      
     </div>
   );
 };

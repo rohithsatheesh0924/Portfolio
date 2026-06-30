@@ -3,6 +3,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { useDarkMode } from "../context/DarkModeContext";
 import { Star } from "lucide-react";
+import ScrollVelocity from "../components/ScrollVelocity";
 import emailjs from '@emailjs/browser';
 
 const Home = () => {
@@ -307,6 +308,25 @@ const Home = () => {
 
         </div>
       </div>
+
+
+      {/* FRONTEND DEVELOPER VELOCITY MARQUEE SECTION */}
+<section className={`py-20 sm:py-28 overflow-hidden border-t border-b select-none ${isDark ? 'bg-zinc-950 border-white/5' : 'bg-zinc-50 border-black/5'}`}>
+  <div className="w-full flex flex-col gap-4">
+    
+    <ScrollVelocity
+      texts={['Frontend Developer ✦', 'Frontend Developer ✦']} 
+      velocity={80}
+      className={`text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-[1000] uppercase font-sans tracking-tighter scale-y-110 ${
+        isDark ? 'text-blue-500' : 'text-blue-600'
+      }`}
+      numCopies={6}
+      damping={50}
+      stiffness={400}
+    />
+
+  </div>
+</section>
 
       <section 
         ref={projectsRef}
@@ -914,12 +934,12 @@ const Home = () => {
         {/* Dynamic Submission Callback Status Logs */}
         {formStatus.success && (
           <p className="text-xs font-bold tracking-wider text-green-500 uppercase px-1">
-            // Message sent successfully. Thank you.
+             Message sent successfully. Thank you.
           </p>
         )}
         {formStatus.error && (
           <p className="text-xs font-bold tracking-wider text-red-500 uppercase px-1">
-            // Error transmission failure. Please retry.
+             Error transmission failure. Please retry.
           </p>
         )}
 
