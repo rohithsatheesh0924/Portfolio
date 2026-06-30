@@ -102,7 +102,7 @@ const Projects = () => {
       liveUrl: "https://dsfutureworld.com/",
       adminUrl: "https://admin.dsfutureworld.com/",
       githubUrl: "#",
-      year: "2025",
+      year: "2026",
       featured: true
     },
     {
@@ -116,7 +116,7 @@ const Projects = () => {
       liveUrl: "https://hirafashions.web.app/",
       adminUrl: "https://admin-hirafashions.web.app/",
       githubUrl: "#",
-      year: "2025",
+      year: "2026",
       featured: true
     },
     {
@@ -129,7 +129,7 @@ const Projects = () => {
       image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&auto=format&fit=crop",
       liveUrl: "https://www.vishakhansolution.in/",
       githubUrl: "#",
-      year: "2025",
+      year: "2026",
       featured: true
     },
     {
@@ -142,7 +142,7 @@ const Projects = () => {
       image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&auto=format&fit=crop",
       liveUrl: "https://chefzpartner.com/",
       githubUrl: "#",
-      year: "2024",
+      year: "2025",
       featured: true
     },
     {
@@ -155,7 +155,7 @@ const Projects = () => {
       image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&auto=format&fit=crop",
       liveUrl: "https://thesanvis.com/",
       githubUrl: "#",
-      year: "2024",
+      year: "2025",
       featured: false
     },
     {
@@ -168,7 +168,7 @@ const Projects = () => {
       image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=800&auto=format&fit=crop",
       liveUrl: "https://tvkkalvimaiyam.com/",
       githubUrl: "#",
-      year: "2024",
+      year: "2025",
       featured: false
     },
     {
@@ -181,7 +181,7 @@ const Projects = () => {
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop",
       liveUrl: "https://maharajaelc.web.app",
       githubUrl: "#",
-      year: "2024",
+      year: "2026",
       featured: false
     },
     {
@@ -194,7 +194,7 @@ const Projects = () => {
       image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&auto=format&fit=crop",
       liveUrl: "https://nexarco.com/",
       githubUrl: "#",
-      year: "2024",
+      year: "2025",
       featured: false
     },
     {
@@ -207,7 +207,7 @@ const Projects = () => {
       image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&auto=format&fit=crop",
       liveUrl: "https://syncrabim.com",
       githubUrl: "#",
-      year: "2024",
+      year: "2025",
       featured: false
     },
     {
@@ -220,7 +220,7 @@ const Projects = () => {
       image: "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=800&auto=format&fit=crop",
       liveUrl: "https://aerial-vision250.vercel.app/",
       githubUrl: "#",
-      year: "2024",
+      year: "2026",
       featured: false
     },
     {
@@ -233,7 +233,7 @@ const Projects = () => {
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop",
       liveUrl: "#",
       githubUrl: "#",
-      year: "2025",
+      year: "2026",
       featured: false,
       inProgress: true
     }
