@@ -84,55 +84,57 @@ const Home = () => {
   }, []);
 
   const portfolioProjects = [
-    {
-      id: 1,
-      title: "Brand Identity",
-      category: "Identity",
-      slug: "brand-identity",
-      image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800&auto=format&fit=crop",
-      logo: (
-        <svg className="w-16 h-16 text-zinc-300" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12 2L2 12l10 10 10-10L12 2zm0 4.5L17.5 12 12 17.5 6.5 12 12 6.5z"/>
-        </svg>
-      )
-    },
-    {
-      id: 2,
-      title: "Monogram Design",
-      category: "Monogram",
-      slug: "monogram",
-      image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop",
-      logo: (
-        <svg className="w-20 h-20 text-zinc-400" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M4 4h7v16H4V4zm9 0h7v8h-7V4zm0 10h7v6h-7v-6z"/>
-        </svg>
-      )
-    },
-    {
-      id: 3,
-      title: "Digital Ecosystem",
-      category: "Development",
-      slug: "digital-ecosystem",
-      image: "https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?q=80&w=800&auto=format&fit=crop",
-      logo: (
-        <svg className="w-16 h-16 text-zinc-500" viewBox="0 0 24 24" fill="currentColor">
-          <circle cx="12" cy="12" r="8" stroke="currentColor" strokeWidth="2" fill="none"/>
-        </svg>
-      )
-    },
-    {
-      id: 4,
-      title: "Art Direction",
-      category: "Creative",
-      slug: "art-direction",
-      image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=800&auto=format&fit=crop",
-      logo: (
-        <svg className="w-16 h-16 text-zinc-500" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12 2L2 22h20L12 2zm0 5l6.5 11.5h-13L12 7z"/>
-        </svg>
-      )
-    }
-  ];
+  {
+    id: 1,
+    title: "DS Future World",
+    category: "E-Commerce",
+    slug: "ds-future-world",
+    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&auto=format&fit=crop",
+    description: "Developed a responsive e-commerce platform with product management, order processing, and admin dashboard functionalities. Integrated APIs and optimized performance for an enhanced user experience.",
+    liveUrl: "https://dsfutureworld.com/",
+    tech: ["React.js", "Node.js", "MongoDB", "Express"]
+  },
+  {
+    id: 2,
+    title: "Hira Fashions",
+    category: "E-Commerce",
+    slug: "hira-fashions",
+    image: "https://images.unsplash.com/photo-1445205170230-053b83016050?w=800&auto=format&fit=crop",
+    description: "Built a complete fashion e-commerce solution with user-friendly shopping interface and comprehensive admin dashboard for inventory and order management.",
+    liveUrl: "https://hirafashions.web.app/",
+    tech: ["React.js", "Firebase", "Node.js", "MongoDB"]
+  },
+  {
+    id: 3,
+    title: "Vishakhan Solution",
+    category: "Business",
+    slug: "vishakhan-solution",
+    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&auto=format&fit=crop",
+    description: "Developed a responsive business website showcasing real estate photo editing services, portfolio, and inquiry management features. Optimized performance, SEO, and mobile responsiveness.",
+    liveUrl: "https://www.vishakhansolution.in/",
+    tech: ["React.js", "Tailwind CSS", "SEO"]
+  },
+  {
+    id: 4,
+    title: "Chefz Partner",
+    category: "Management",
+    slug: "chefz-partner",
+    image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&auto=format&fit=crop",
+    description: "Developed a restaurant management platform with order, subscription, and event booking features. Built responsive dashboards, integrated APIs, and optimized performance.",
+    liveUrl: "https://chefzpartner.com/",
+    tech: ["React.js", "Node.js", "MongoDB", "APIs"]
+  },
+  {
+    id: 5,
+    title: "The Sanvis",
+    category: "Business",
+    slug: "the-sanvis",
+    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&auto=format&fit=crop",
+    description: "Professional corporate website with modern design, responsive layout, and optimized performance for enhanced brand presence and user engagement.",
+    liveUrl: "https://thesanvis.com/",
+    tech: ["React.js", "Tailwind CSS", "Vercel"]
+  }
+];
 
   const clientTestimonials = [
     {
@@ -328,81 +330,197 @@ const Home = () => {
   </div>
 </section>
 
-      <section 
-        ref={projectsRef}
-        className={`py-32 px-6 md:px-12 lg:px-20 transition-all duration-[1200ms] cubic-bezier(0.2, 0.8, 0.2, 1) ${
-          projectsActive 
-            ? "opacity-100 translate-y-0" 
-            : "opacity-0 translate-y-24"
-        } ${isDark ? 'bg-zinc-950 text-white' : 'bg-zinc-50 text-zinc-900'}`}
-      >
-        <div className="max-w-7xl mx-auto">
-          
-          <div className="flex items-center justify-between gap-8 mb-20 select-none">
-            <h2 className="text-4xl md:text-5xl font-[1000] font-sans tracking-tight uppercase text-blue-600 whitespace-nowrap scale-y-105">
-              PROJECTS
-            </h2>
-            <div className="relative flex-1 h-[2px] bg-zinc-200 dark:bg-zinc-800 overflow-hidden rounded-full">
-              <div 
-                className="absolute top-0 right-0 h-full bg-blue-600 transition-transform duration-100 ease-out"
-                style={{
-                  width: "100%",
-                  transform: `translateX(${scrollProgress}%)`,
-                }}
+    {/* FEATURED PROJECTS - Premium Horizontal Split Scroll Stack Replica Track */}
+<section 
+  ref={projectsRef}
+  className={`py-32 px-6 md:px-12 lg:px-20 transition-all duration-[1200ms] cubic-bezier(0.2, 0.8, 0.2, 1) ${
+    projectsActive 
+      ? "opacity-100 translate-y-0" 
+      : "opacity-0 translate-y-24"
+  } ${isDark ? 'bg-zinc-950 text-white' : 'bg-zinc-50 text-zinc-900'}`}
+>
+  <div className="max-w-7xl mx-auto">
+    
+    {/* Premium Section Header Track */}
+    <div className="flex items-center justify-between gap-8 mb-20 select-none">
+      <div className="flex flex-col">
+        <span className={`text-[10px] sm:text-xs font-black tracking-[0.4em] uppercase mb-3 ${isDark ? 'text-blue-400' : 'text-blue-600'}`}>
+          Featured Selection
+        </span>
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight uppercase leading-none scale-y-105">
+          Projects
+        </h2>
+      </div>
+      <div className="relative flex-1 h-[2px] bg-zinc-200 dark:bg-zinc-800 overflow-hidden rounded-full">
+        <div 
+          className="absolute top-0 right-0 h-full bg-blue-600 dark:bg-blue-500 transition-transform duration-100 ease-out"
+          style={{
+            width: "100%",
+            transform: `translateX(${scrollProgress}%)`,
+          }}
+        />
+      </div>
+    </div>
+
+    {/* Premium Editorial Vertical Stack composed of Horizontal Row Cards with Sticky Logic Engine */}
+    <div className="relative flex flex-col gap-12 sm:gap-16">
+      {portfolioProjects.map((project, idx) => (
+        <article
+          key={project.id}
+          className={`group relative rounded-3xl overflow-hidden border backdrop-blur-md sticky transition-all duration-500 shadow-2xl hover:shadow-3xl ${
+            isDark 
+              ? 'bg-gradient-to-br from-zinc-900/95 via-zinc-900/90 to-zinc-950/95 border-zinc-800/80 hover:border-blue-500/30 shadow-[0_30px_80px_rgba(0,0,0,0.5)]' 
+              : 'bg-gradient-to-br from-white/95 via-white/90 to-zinc-50/95 border-zinc-200/80 hover:border-blue-600/30 shadow-[0_30px_80px_rgba(0,0,0,0.08)]'
+          }`}
+          style={{ 
+            // Dynamic multi-layered scroll stack calculations
+            top: `calc(6rem + ${idx * 32}px)`,
+            transform: projectsActive 
+              ? `scale(${1 - (portfolioProjects.length - idx) * 0.015}) translateY(0)` 
+              : 'scale(0.95) translateY(40px)',
+            opacity: projectsActive ? 1 : 0,
+            zIndex: idx + 1,
+            transitionDelay: projectsActive ? `${idx * 40}ms` : '0ms'
+          }}
+        >
+          {/* Layout Split: Left Media Side, Right Editorial Content Panel */}
+          <div className="grid lg:grid-cols-[1.2fr,1fr] gap-0 items-stretch">
+            
+            {/* Left Side: Photo Frame Container */}
+            <div className="relative aspect-[16/10] lg:aspect-auto lg:min-h-[480px] overflow-hidden bg-zinc-900">
+              <img 
+                src={project.image} 
+                alt={project.title}
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-103"
               />
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14">
-            {portfolioProjects.map((project, idx) => (
-              <div 
-                key={project.id} 
-                className={`flex flex-col gap-4 transition-all duration-1000 ease-out`}
-                style={{ 
-                  transitionDelay: projectsActive ? `${idx * 150}ms` : '0ms',
-                  transform: projectsActive ? 'translateY(0) scale(1)' : 'translateY(40px) scale(0.97)',
-                  opacity: projectsActive ? 1 : 0
-                }}
-              >
+              
+              {/* Image Gradient Protection Mask */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />
+              
+              {/* Left Top Float Badges */}
+              <div className="absolute top-6 left-6 flex gap-2.5 z-10 select-none">
+                <div className={`px-4 py-2 rounded-full text-[10px] font-black tracking-[0.25em] uppercase backdrop-blur-xl shadow-md ${
+                  isDark 
+                    ? 'bg-blue-500/90 text-white border border-blue-400/50' 
+                    : 'bg-blue-600/90 text-white border border-blue-500/50'
+                }`}>
+                  {project.category}
+                </div>
                 
-                <Link 
-                  to={`/projects/${project.slug}`}
-                  className="group relative block aspect-[4/3] w-full overflow-hidden bg-zinc-900 rounded-2xl sm:rounded-3xl shadow-xl transition-all duration-500"
-                >
-                  <div className="absolute inset-0 w-full h-full grayscale opacity-40 group-hover:opacity-20 group-hover:scale-[1.03] mix-blend-luminosity transition-all duration-700 ease-out">
-                    <img 
-                      src={project.image} 
-                      alt={project.title} 
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
+              </div>
 
-                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none transition-transform duration-500 group-hover:scale-95 opacity-80 group-hover:opacity-100">
-                    {project.logo}
-                  </div>
+              {/* High-Class Large Watermark Base Number */}
+              <div className={`absolute bottom-4 left-6 text-[80px] sm:text-[110px] font-[1000] leading-none tracking-tighter select-none pointer-events-none ${
+                isDark ? 'text-white/5' : 'text-zinc-900/5'
+              }`}>
+                {String(project.id).padStart(2, '0')}
+              </div>
+            </div>
 
-                  <div className="absolute bottom-0 left-0 bg-blue-600 text-white px-8 py-3.5 text-xs font-black tracking-[0.2em] uppercase rounded-tr-xl transition-all duration-300 translate-y-full group-hover:translate-y-0 select-none shadow-lg">
-                    {project.category}
-                  </div>
-
-                  <div className="absolute inset-0 border border-black/10 dark:border-white/5 pointer-events-none rounded-2xl sm:rounded-3xl" />
-                </Link>
-
-                <div className="flex justify-between items-center px-2 pt-1 select-none">
-                  <h3 className="text-lg md:text-xl font-extrabold tracking-tight uppercase text-zinc-900 dark:text-zinc-100">
+            {/* Right Side: High-Density Description & Actions Panel */}
+            <div className="p-8 sm:p-10 lg:p-12 flex flex-col justify-between relative z-10">
+              <div className="space-y-6">
+                
+                {/* Header Subtitles & Primary Title Stack */}
+                <div>
+                  
+                  
+                  <h3 className={`text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight uppercase leading-tight mb-4 scale-y-105 ${
+                    isDark ? 'text-white' : 'text-zinc-900'
+                  }`}>
                     {project.title}
                   </h3>
-                  <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-zinc-400 dark:text-zinc-500">
-                    // 0{project.id}
-                  </span>
                 </div>
 
-              </div>
-            ))}
-          </div>
+                {/* Narrative Details */}
+                <p className={`text-sm sm:text-base leading-relaxed font-medium tracking-wide ${
+                  isDark ? 'text-zinc-300' : 'text-zinc-600'
+                }`}>
+                  {project.description}
+                </p>
 
-        </div>
-      </section>
+                {/* Project Specs Tag Row */}
+                <div className="pt-6 border-t border-dashed border-zinc-200 dark:border-zinc-800">
+                  <p className={`text-[9px] font-black tracking-[0.3em] uppercase mb-3 ${isDark ? 'text-zinc-500' : 'text-zinc-400'}`}>
+                    Technology Stack
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {project.tech.map((tech, i) => (
+                      <span 
+                        key={i}
+                        className={`px-3 py-1.5 rounded-lg text-[10px] font-bold tracking-wider uppercase transition-all duration-300 hover:scale-105 ${
+                          isDark 
+                            ? 'bg-zinc-800/60 text-zinc-300 border border-zinc-700/50 hover:border-blue-500/50 hover:text-blue-400' 
+                            : 'bg-zinc-100 text-zinc-700 border border-zinc-200 hover:border-blue-600/50 hover:text-blue-600'
+                        }`}
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Inline Action Segment Footer */}
+              <div className="flex flex-col sm:flex-row gap-3 mt-10">
+                <a 
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`group/btn flex-1 py-4 rounded-xl font-black text-xs tracking-[0.25em] uppercase transition-all duration-300 flex items-center justify-center gap-2 hover:-translate-y-0.5 ${
+                    isDark 
+                      ? 'bg-blue-500 hover:bg-blue-400 text-white shadow-xl shadow-blue-500/20 hover:shadow-blue-400/30' 
+                      : 'bg-blue-600 hover:bg-blue-700 text-white shadow-xl shadow-blue-600/20 hover:shadow-blue-700/30'
+                  }`}
+                >
+                  <svg className="w-4 h-4 transition-transform duration-300 group-hover/btn:rotate-12" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                  <span>Visit Live Site</span>
+                </a>
+                
+                {project.adminUrl && project.adminUrl !== "#" && (
+                  <a 
+                    href={project.adminUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`group/btn flex-1 py-4 rounded-xl font-black text-xs tracking-[0.25em] uppercase transition-all duration-300 flex items-center justify-center gap-2 border-2 hover:-translate-y-0.5 ${
+                      isDark 
+                        ? 'border-zinc-700 hover:border-blue-500 text-zinc-300 hover:text-blue-400 hover:bg-zinc-900/50' 
+                        : 'border-zinc-300 hover:border-blue-600 text-zinc-700 hover:text-blue-600 hover:bg-white'
+                    }`}
+                  >
+                    <Layout className="w-4 h-4 transition-transform duration-300 group-hover/btn:scale-105" />
+                    <span>Admin Panel</span>
+                  </a>
+                )}
+              </div>
+
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    {/* Section View-All Utility Footer Links */}
+    <div className="mt-20 text-center">
+      <Link
+        to="/projects"
+        className={`inline-flex items-center gap-3 px-10 py-4 rounded-full font-black text-xs tracking-[0.25em] uppercase transition-all duration-300 hover:-translate-y-0.5 group ${
+          isDark 
+            ? 'bg-zinc-900 hover:bg-zinc-800 text-white border-2 border-zinc-800 hover:border-blue-500/50' 
+            : 'bg-white hover:bg-zinc-50 text-zinc-900 border-2 border-zinc-200 hover:border-blue-600/50 shadow-xl'
+        }`}
+      >
+        <span>View All Projects</span>
+        <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </Link>
+    </div>
+
+  </div>
+</section>
 
     {/* PROFESSIONAL INFINITE TRACK LOOP TESTIMONIALS SECTION */}
 <section 
