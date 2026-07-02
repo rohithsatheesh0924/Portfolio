@@ -3,6 +3,7 @@ import React, { useEffect, useState, useRef } from "react";
 import Navbar from "../components/Navbar";
 import { useDarkMode } from "../context/DarkModeContext";
 import { ExternalLink, Layout } from "lucide-react";
+import ContactSection from "../components/ContactSection";
 
 // Performance-optimized Progressive Counting Sub-Component
 const StatCounter = ({ targetValue, duration = 2000, triggerAnimation }) => {
@@ -756,23 +757,7 @@ const Projects = () => {
         </div>
       </section>
 
-      {/* FOOTER TEXT */}
-      <section 
-        ref={footerRef}
-        className={`py-12 sm:py-16 lg:py-24 overflow-hidden border-t transition-all duration-1000 ${
-          visibleSections.footer ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
-        } ${isDark ? 'bg-zinc-950 border-white/5' : 'bg-zinc-50 border-black/5'}`}
-      >
-        <div className="max-w-7xl mx-auto px-6 select-none">
-          <div className="flex flex-wrap justify-center items-center gap-2 sm:gap-4 lg:gap-6 text-[8rem] sm:text-[10rem] md:text-[12rem] lg:text-[18rem] font-black leading-none tracking-tighter uppercase scale-y-105">
-            <span className={isDark ? 'text-blue-500' : 'text-blue-600'}>DEV</span>
-            <span className={isDark ? 'text-blue-500/20' : 'text-blue-600/10'}>✦</span>
-            <span className={isDark ? 'text-blue-500' : 'text-blue-600'}>CODE</span>
-            <span className={isDark ? 'text-blue-500/20' : 'text-blue-600/10'}>✦</span>
-            <span className={isDark ? 'text-blue-500' : 'text-blue-600'}>SHIP</span>
-          </div>
-        </div>
-      </section>
+     <ContactSection />
     </div>
   );
 };

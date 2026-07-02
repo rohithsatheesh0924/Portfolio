@@ -3,6 +3,7 @@ import React, { useEffect, useState, useRef } from "react";
 import Navbar from "../components/Navbar";
 import { useDarkMode } from "../context/DarkModeContext";
 import ScrollVelocity from "../components/ScrollVelocity";
+import ContactSection from "../components/ContactSection";
 
 const About = () => {
   const { isDark } = useDarkMode();
@@ -515,117 +516,7 @@ const About = () => {
   `}} />
 </section>
 
-      {/* CONTACT SECTION */}
-      <section 
-        ref={contactRef}
-        className={`py-16 sm:py-24 px-4 sm:px-6 lg:px-12 ${isDark ? 'bg-zinc-900/30' : 'bg-white/50'}`}
-      >
-        <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-start">
-            
-            {/* Left - Contact info */}
-            <div className={`transition-all duration-1000 ${visibleSections.contact ? "opacity-100 -translate-x-0" : "opacity-0 -translate-x-12"}`}>
-              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black font-sans leading-tight sm:leading-snug tracking-tight uppercase mb-8 sm:mb-12">
-                Looking to start a project or need a consultation?{" "}
-                <span className="block mt-2 text-blue-600 dark:text-blue-500">Feel free to contact me.</span>
-              </h3>
-              
-              <div className="space-y-4 sm:space-y-6">
-                <div className="flex flex-col gap-1">
-                  <span className="text-[9px] sm:text-[10px] tracking-[0.3em] font-bold uppercase text-zinc-500">Headquarters</span>
-                  <span className="text-base sm:text-lg font-semibold">Coimbatore, Tamil Nadu, India</span>
-                </div>
-                <div className="flex flex-col gap-1">
-                  <span className="text-[9px] sm:text-[10px] tracking-[0.3em] font-bold uppercase text-zinc-500">Email</span>
-                  <a href="mailto:rohithips296@gmail.com" className="text-base sm:text-lg font-semibold text-blue-600 dark:text-blue-500 hover:underline transition-colors break-all">
-                    rohithips296@gmail.com
-                  </a>
-                </div>
-                <div className="flex flex-col gap-1">
-                  <span className="text-[9px] sm:text-[10px] tracking-[0.3em] font-bold uppercase text-zinc-500">Phone</span>
-                  <a href="tel:+919750565041" className="text-base sm:text-lg font-semibold text-blue-600 dark:text-blue-500 hover:underline transition-colors">
-                    +91 97505 65041
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* Right - Contact Form */}
-            <div className={`transition-all duration-1000 delay-300 ${visibleSections.contact ? "opacity-100 translate-x-0" : "opacity-0 translate-x-12"}`}>
-              <form onSubmit={handleFormSubmit} className="space-y-4 sm:space-y-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-                  <div className="flex flex-col gap-2">
-                    <label className="text-[9px] sm:text-[10px] font-black tracking-[0.25em] uppercase text-zinc-500 px-1">Your Name</label>
-                    <input 
-                      type="text" 
-                      name="user_name"
-                      required
-                      placeholder="John Doe"
-                      className={`w-full px-4 sm:px-5 py-3.5 sm:py-4 rounded-xl border text-sm transition-all duration-300 outline-none font-bold tracking-wide ${
-                        isDark 
-                          ? 'bg-zinc-900/40 border-zinc-800/80 text-white placeholder-zinc-600 focus:border-blue-500 focus:bg-zinc-900' 
-                          : 'bg-zinc-200/50 border-transparent text-zinc-900 placeholder-zinc-400 focus:border-blue-600 focus:bg-white focus:shadow-xl'
-                      }`}
-                    />
-                  </div>
-                  <div className="flex flex-col gap-2">
-                    <label className="text-[9px] sm:text-[10px] font-black tracking-[0.25em] uppercase text-zinc-500 px-1">Email Address</label>
-                    <input 
-                      type="email" 
-                      name="user_email"
-                      required
-                      placeholder="john@example.com"
-                      className={`w-full px-4 sm:px-5 py-3.5 sm:py-4 rounded-xl border text-sm transition-all duration-300 outline-none font-bold tracking-wide ${
-                        isDark 
-                          ? 'bg-zinc-900/40 border-zinc-800/80 text-white placeholder-zinc-600 focus:border-blue-500 focus:bg-zinc-900' 
-                          : 'bg-zinc-200/50 border-transparent text-zinc-900 placeholder-zinc-400 focus:border-blue-600 focus:bg-white focus:shadow-xl'
-                      }`}
-                    />
-                  </div>
-                </div>
-
-                <div className="flex flex-col gap-2">
-                  <label className="text-[9px] sm:text-[10px] font-black tracking-[0.25em] uppercase text-zinc-500 px-1">Your Message</label>
-                  <textarea 
-                    name="message"
-                    required
-                    rows={6}
-                    placeholder="Tell me about your project..."
-                    className={`w-full px-4 sm:px-5 py-3.5 sm:py-4 rounded-xl border text-sm transition-all duration-300 outline-none font-bold tracking-wide resize-none ${
-                      isDark 
-                        ? 'bg-zinc-900/40 border-zinc-800/80 text-white placeholder-zinc-600 focus:border-blue-500 focus:bg-zinc-900' 
-                        : 'bg-zinc-200/50 border-transparent text-zinc-900 placeholder-zinc-400 focus:border-blue-600 focus:bg-white focus:shadow-xl'
-                    }`}
-                  />
-                </div>
-
-                {formStatus?.success && (
-                  <div className="p-4 rounded-xl bg-green-500/10 border border-green-500/30">
-                    <p className="text-xs sm:text-sm font-black tracking-[0.15em] text-green-500 uppercase">
-                      ✓ Message sent successfully. I'll get back to you soon!
-                    </p>
-                  </div>
-                )}
-                {formStatus?.error && (
-                  <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/30">
-                    <p className="text-xs sm:text-sm font-black tracking-[0.15em] text-red-500 uppercase">
-                      ✗ Failed to send message. Please try again.
-                    </p>
-                  </div>
-                )}
-
-                <button 
-                  type="submit"
-                  disabled={formStatus?.loading}
-                  className="w-full py-4 sm:py-4.5 rounded-xl font-black text-xs sm:text-sm tracking-[0.3em] uppercase text-white bg-blue-600 hover:bg-blue-700 disabled:bg-zinc-500 shadow-xl shadow-blue-600/10 hover:shadow-blue-600/20 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 select-none"
-                >
-                  {formStatus?.loading ? 'Sending...' : 'Send Message'}
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ContactSection />
 
       
     </div>

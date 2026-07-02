@@ -5,6 +5,7 @@ import { useDarkMode } from "../context/DarkModeContext";
 import { Star } from "lucide-react";
 import ScrollVelocity from "../components/ScrollVelocity";
 import emailjs from '@emailjs/browser';
+import ContactSection from "../components/ContactSection";
 
 const Home = () => {
   const { isDark } = useDarkMode();
@@ -215,7 +216,7 @@ const Home = () => {
           
           <div>
             <p className={`text-[10px] sm:text-xs uppercase tracking-[0.3em] sm:tracking-[0.4em] font-medium mt-4 mb-2 ${isDark ? 'text-zinc-500' : 'text-zinc-400'}`}>
-              Crafting Digital Goods Since — Y-2017
+              Curating Elite Code & Contextual Layouts Since — Y-2025
             </p>
           </div>
           
@@ -296,39 +297,35 @@ const Home = () => {
             >
               View Projects
             </Link>
-            <Link
-              to="/contact"
-              className={`w-full sm:w-auto px-10 py-4 rounded-full font-semibold text-sm tracking-widest uppercase border transition-all duration-300 hover:-translate-y-0.5 ${
-                isDark 
-                  ? 'border-zinc-800 text-white hover:border-blue-500 hover:text-blue-500' 
-                  : 'border-zinc-300 text-zinc-800 hover:border-blue-600 hover:text-blue-600'
-              }`}
-            >
-              Contact Me
-            </Link>
+            {/* CONTACT ME ANCHOR ROUTE LINK - High-Signal Spatial Navigation */}
+<a
+  href="/#contact"
+  onClick={(e) => {
+    // Elegant single-page smooth scroll override fallback if already on the homepage
+    if (window.location.pathname === "/") {
+      e.preventDefault();
+      const target = document.getElementById("contact");
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth" });
+        window.history.pushState(null, "", "#contact");
+      }
+    }
+  }}
+  className={`w-full sm:w-auto px-10 py-4 rounded-full font-black text-xs sm:text-sm tracking-[0.25em] uppercase border transition-all duration-300 text-center hover:-translate-y-0.5 select-none ${
+    isDark 
+      ? 'border-zinc-800 text-white hover:border-blue-500 hover:text-blue-400' 
+      : 'border-zinc-300 text-zinc-800 hover:border-blue-600 hover:text-blue-600'
+  }`}
+>
+  Contact Me
+</a>
           </div>
 
         </div>
       </div>
 
 
-      {/* FRONTEND DEVELOPER VELOCITY MARQUEE SECTION */}
-<section className={`py-20 sm:py-28 overflow-hidden border-t border-b select-none ${isDark ? 'bg-zinc-950 border-white/5' : 'bg-zinc-50 border-black/5'}`}>
-  <div className="w-full flex flex-col gap-4">
-    
-    <ScrollVelocity
-      texts={['Frontend Developer ✦', 'Frontend Developer ✦']} 
-      velocity={80}
-      className={`text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-[1000] uppercase font-sans tracking-tighter scale-y-110 ${
-        isDark ? 'text-blue-500' : 'text-blue-600'
-      }`}
-      numCopies={6}
-      damping={50}
-      stiffness={400}
-    />
-
-  </div>
-</section>
+      
 
     {/* FEATURED PROJECTS - Premium Horizontal Split Scroll Stack Replica Track */}
 <section 
@@ -942,137 +939,8 @@ const Home = () => {
     }
   `}} />
 </section>
+   <ContactSection />
 
-
-{/* CONTACT SECTION - Exact architectural replica of image_a327f5.png */}
-<section 
-  ref={contactFormRef}
-  className={`py-32 px-6 md:px-12 lg:px-20 relative overflow-hidden transition-all duration-[1200ms] ease-out ${
-    contactActive ? "opacity-100 translate-y-0" : "opacity-0 translate-y-24"
-  } ${isDark ? 'bg-zinc-950 text-white' : 'bg-zinc-50 text-zinc-900'}`}
->
-  <div className="max-w-7xl mx-auto">
-    
-    {/* Section Header Track matching your structural design theme */}
-    <div 
-      className={`flex items-center justify-between gap-8 mb-20 select-none transition-all duration-1000 ease-out ${
-        contactActive ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4"
-      }`}
-    >
-      <h2 className="text-4xl md:text-5xl font-[1000] font-sans tracking-tight uppercase whitespace-nowrap scale-y-105 text-blue-600 dark:text-blue-500">
-        CONTACT
-      </h2>
-      <div className="relative flex-1 h-[2px] bg-zinc-200 dark:bg-zinc-800 overflow-hidden rounded-full">
-        <div 
-          className="absolute top-0 right-0 h-full bg-blue-600 dark:bg-blue-500 transition-transform duration-100 ease-out"
-          style={{
-            width: "100%",
-            transform: `translateX(${scrollProgress}%)`,
-          }}
-        />
-      </div>
-    </div>
-
-    {/* Two Column Form Grid Area */}
-    <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-      
-      {/* Left Column: Contextual Meta Information Blocks */}
-      <div 
-        className={`flex flex-col gap-8 transition-all duration-1000 delay-200 ease-out ${
-          contactActive ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
-        }`}
-      >
-        <h3 className="text-2xl sm:text-3xl font-normal leading-snug tracking-wide font-sans max-w-md">
-          Looking to start a project or you need consultation? Feel free to contact me.
-        </h3>
-        
-        <div className="flex flex-col gap-2 text-base font-normal tracking-wide mt-4">
-          <span className={`${isDark ? 'text-zinc-400' : 'text-zinc-600'}`}>
-            Coimbatore, Tamil Nadu, India
-          </span>
-          <a 
-            href="mailto:rohithips296@gmail.com" 
-            className="text-blue-600 dark:text-blue-500 hover:underline w-max transition-all"
-          >
-            rohithips296@gmail.com
-          </a>
-          <a 
-            href="tel:+919750565041" 
-            className="text-blue-600 dark:text-blue-500 hover:underline w-max transition-all"
-          >
-            +91 97505 65041
-          </a>
-        </div>
-      </div>
-
-      {/* Right Column: Premium Action Input Field Elements using EmailJS API */}
-      <form 
-        onSubmit={handleFormSubmit}
-        className={`flex flex-col gap-4 w-full transition-all duration-1000 delay-400 ease-out ${
-          contactActive ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
-        }`}
-      >
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <input 
-            type="text" 
-            name="user_name"
-            required
-            placeholder="Your Name"
-            className={`w-full px-5 py-4 rounded-xl border text-sm transition-all outline-none font-medium ${
-              isDark 
-                ? 'bg-zinc-900/50 border-zinc-800 text-white placeholder-zinc-500 focus:border-blue-500' 
-                : 'bg-zinc-200/60 border-transparent text-zinc-900 placeholder-zinc-500 focus:border-blue-600 focus:bg-white'
-            }`}
-          />
-          <input 
-            type="email" 
-            name="user_email"
-            required
-            placeholder="Email@domain.com"
-            className={`w-full px-5 py-4 rounded-xl border text-sm transition-all outline-none font-medium ${
-              isDark 
-                ? 'bg-zinc-900/50 border-zinc-800 text-white placeholder-zinc-500 focus:border-blue-500' 
-                : 'bg-zinc-200/60 border-transparent text-zinc-900 placeholder-zinc-500 focus:border-blue-600 focus:bg-white'
-            }`}
-          />
-        </div>
-
-        <textarea 
-          name="message"
-          required
-          rows={6}
-          placeholder="Message..."
-          className={`w-full px-5 py-4 rounded-xl border text-sm transition-all outline-none font-medium resize-none ${
-            isDark 
-              ? 'bg-zinc-900/50 border-zinc-800 text-white placeholder-zinc-500 focus:border-blue-500' 
-              : 'bg-zinc-200/60 border-transparent text-zinc-900 placeholder-zinc-500 focus:border-blue-600 focus:bg-white'
-          }`}
-        />
-
-        {/* Dynamic Submission Callback Status Logs */}
-        {formStatus.success && (
-          <p className="text-xs font-bold tracking-wider text-green-500 uppercase px-1">
-             Message sent successfully. Thank you.
-          </p>
-        )}
-        {formStatus.error && (
-          <p className="text-xs font-bold tracking-wider text-red-500 uppercase px-1">
-             Error transmission failure. Please retry.
-          </p>
-        )}
-
-        <button 
-          type="submit"
-          disabled={formStatus.loading}
-          className="w-full py-4 rounded-xl font-bold text-sm tracking-widest uppercase text-white bg-blue-600 hover:bg-blue-700 disabled:bg-zinc-500 shadow-xl shadow-blue-600/10 hover:shadow-blue-600/20 transition-all duration-300"
-        >
-          {formStatus.loading ? 'Sending...' : 'Send'}
-        </button>
-      </form>
-
-    </div>
-  </div>
-</section>
     </>
   );
 };
