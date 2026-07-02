@@ -828,26 +828,7 @@ const Home = () => {
   ))}
 </div>
 
-        {/* Additional Skills Tags */}
-        <div className="mt-16 relative z-30">
-          <h4 className={`text-xs font-bold tracking-[0.2em] uppercase mb-4 ${isDark ? 'text-zinc-400' : 'text-zinc-600'}`}>
-            Also Proficient In
-          </h4>
-          <div className="flex flex-wrap gap-2">
-            {["C", "C++", "Python", "Canva", "Adobe Photoshop", "Microsoft Excel"].map((skill) => (
-              <span 
-                key={skill}
-                className={`px-4 py-2 rounded-full text-xs font-semibold transition-all duration-300 hover:scale-105 ${
-                  isDark 
-                    ? 'bg-zinc-900 text-zinc-300 border border-zinc-800 hover:border-blue-500' 
-                    : 'bg-white text-zinc-700 border border-zinc-200 hover:border-blue-600'
-                }`}
-              >
-                {skill}
-              </span>
-            ))}
-          </div>
-        </div>
+        
       </div>
 
     </div>
